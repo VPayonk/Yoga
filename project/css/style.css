@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url("../fonts/OpenSans-SemiBold.eot");
+  src: url("../fonts/OpenSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-SemiBold.woff") format("woff"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype"), url("../fonts/OpenSans-SemiBold.svg#osOpenSans-SemiBold") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url("../fonts/OpenSans-Bold.eot");
+  src: url("../fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url("../fonts/OpenSans-Regular.eot");
+  src: url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype"), url("../fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'FreestyleScript';
+  src: url("../fonts/FreestyleScript.eot");
+  src: url("../fonts/FreestyleScript.eot?#iefix") format("embedded-opentype"), url("../fonts/FreestyleScript.woff") format("woff"), url("../fonts/FreestyleScript.ttf") format("truetype"), url("../fonts/FreestyleScript.svg#FreestyleScript") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -40,16 +68,48 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  background-color: red; }
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto; }
 
-h3 {
-  font-size: 25px;
-  color: #f4f4f4;
-  text-align: center; }
+.full-container {
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto; }
 
-h4 {
-  font-size: 30px;
-  float: right;
-  color: blue;
-  text-transform: uppercase; }
+header {
+  height: 100px;
+  background-color: #ffffff; }
+  header .container {
+    height: 100%;
+    display: flex;
+    justify-content: center; }
+    header .container ul {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      header .container ul li {
+        display: inline;
+        position: relative;
+        font-family: OpenSans-SemiBold;
+        font-size: 14px;
+        color: #555555; }
+        header .container ul li:hover {
+          color: #5363db; }
+          header .container ul li:hover:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            left: 25%;
+            bottom: -6px;
+            background-color: #5363db; }
+        header .container ul li.logo {
+          width: 370px;
+          display: flex;
+          justify-content: center; }
+          header .container ul li.logo:hover:after {
+            content: none; }

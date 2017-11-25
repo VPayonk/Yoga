@@ -1,20 +1,83 @@
 @import 'fonts';
 @import 'reset';
 
-body {
-	background-color: red;
+
+$sbold: OpenSans-SemiBold;
+$bold: OpenSans-Bold;
+$regular: OpenSans-Regular;
+$free: FreestyleScript;
+
+$white: #ffffff;
+$black: #555555;
+$hover: #5363db;
+
+.container {
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
 }
 
-h3 {
-	font-size: 25px;
-	color: #f4f4f4;
-	text-align: center;
+.full-container {
+	width: 100%;
+	max-width: 1900px;
+	margin: 0 auto;
 }
-h4 {
-	font-size: 30px;
-	float: right;
-	color: blue;
-	text-transform: uppercase;
+
+header {
+	height: 100px;
+	background-color: $white;
+	
+	.container {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		
+		ul {
+			width: 100%;
+			max-width: 800px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			li {
+				display: inline;
+				position: relative;
+				font-family: $sbold;
+				font-size: 14px;
+				color: $black;
+
+				&:hover {
+					color: $hover;
+
+					&:after {
+						content: '';
+						position: absolute;
+						width: 50%;
+						height: 1px;
+						left: 25%;
+						bottom: -6px;
+						background-color: $hover;
+					}
+				}
+
+				&.logo {
+					width: 370px;
+					display: flex;
+					justify-content: center;
+
+					&:hover {
+						&:after {
+							content: none;
+						}
+					}
+				}
+			}
+		}
+	}
 }
+
+
+
+
 
 @import 'media';
