@@ -1,0 +1,20 @@
+@import 'fonts';
+@import 'reset';
+
+body {
+	background-color: red;
+}
+
+h3 {
+	font-size: 25px;
+	color: #f4f4f4;
+	text-align: center;
+}
+h4 {
+	font-size: 30px;
+	float: right;
+	color: blue;
+	text-transform: uppercase;
+}
+
+@import 'media';
