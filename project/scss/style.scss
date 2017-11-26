@@ -604,6 +604,123 @@ header {
 }
 
 
+footer {
+	background: #5b6ceb;
+
+	.container {
+		display: flex;
+		padding: 100px 0;
+		font-family: $regular;
+		font-size: 14px;
+		line-height: 1.5;
+		color: $white;
+
+		.footer-title {
+			font-family: $bold;
+			font-size: 18px;
+			color: $white;
+			text-transform: uppercase;
+			margin-bottom: 60px;
+		}
+
+		.about-footer {
+			width: 570px;
+
+			.footer-info {
+				width: 470px;
+				margin-bottom: 70px;
+			}
+
+			.social {
+				display: flex;
+				justify-content: space-between;
+				width: 170px;
+				height: 21px;
+
+				a {
+					width: 17px;
+					height: 100%;					
+					background: url('../img/social.png')  no-repeat;
+
+					&:hover {
+					  -webkit-transform: scale(1.2);
+					  -ms-transform: scale(1.2);
+					  transform: scale(1.2);
+					}
+
+					&.twitter {
+						background-position: -34px;
+						width: 25px;
+					}
+
+					&.facebook {
+						background-position: -78px;
+						width: 13px;
+					}	
+
+					&.google {
+						background-position: -113px;
+						width: 19px;
+					}
+
+					&.instagram {
+						background-position: -150px;
+						width: 21px;
+					}
+				}
+			}
+		}
+
+		.contacts {
+			width: 570px;
+
+			.contacts-block {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				div {
+					width: 235px;
+					padding-left: 35px;
+					margin-bottom: 30px;
+					
+					
+					&.adress {
+						background: url('../img/adress.png') left 6px no-repeat;
+					}
+
+					&.email {
+						background: url('../img/email.png') left 5px no-repeat;
+					}
+
+					&.phone {
+						background: url('../img/phone.png') left 6px no-repeat;
+					}
+
+					&.url {
+						background: url('../img/url.png') left 2px no-repeat;
+					}
+				}
+			}
+		}
+	}
+
+	.copyright {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100px;
+		background: $blue;
+
+		span {
+			font-family: $regular;
+			font-size: 16px;
+			color: #b7bffc;
+		}
+	}
+}
+
+
 .lightbox {
 	.lb-image {
 		border-color: $blue;

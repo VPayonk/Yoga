@@ -491,6 +491,80 @@ header {
         border: 1px solid #5363db;
         border-radius: 17px; }
 
+footer {
+  background: #5b6ceb; }
+  footer .container {
+    display: flex;
+    padding: 100px 0;
+    font-family: OpenSans-Regular;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff; }
+    footer .container .footer-title {
+      font-family: OpenSans-Bold;
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 60px; }
+    footer .container .about-footer {
+      width: 570px; }
+      footer .container .about-footer .footer-info {
+        width: 470px;
+        margin-bottom: 70px; }
+      footer .container .about-footer .social {
+        display: flex;
+        justify-content: space-between;
+        width: 170px;
+        height: 21px; }
+        footer .container .about-footer .social a {
+          width: 17px;
+          height: 100%;
+          background: url("../img/social.png") no-repeat; }
+          footer .container .about-footer .social a:hover {
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2); }
+          footer .container .about-footer .social a.twitter {
+            background-position: -34px;
+            width: 25px; }
+          footer .container .about-footer .social a.facebook {
+            background-position: -78px;
+            width: 13px; }
+          footer .container .about-footer .social a.google {
+            background-position: -113px;
+            width: 19px; }
+          footer .container .about-footer .social a.instagram {
+            background-position: -150px;
+            width: 21px; }
+    footer .container .contacts {
+      width: 570px; }
+      footer .container .contacts .contacts-block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        footer .container .contacts .contacts-block div {
+          width: 235px;
+          padding-left: 35px;
+          margin-bottom: 30px; }
+          footer .container .contacts .contacts-block div.adress {
+            background: url("../img/adress.png") left 6px no-repeat; }
+          footer .container .contacts .contacts-block div.email {
+            background: url("../img/email.png") left 5px no-repeat; }
+          footer .container .contacts .contacts-block div.phone {
+            background: url("../img/phone.png") left 6px no-repeat; }
+          footer .container .contacts .contacts-block div.url {
+            background: url("../img/url.png") left 2px no-repeat; }
+  footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: #5363db; }
+    footer .copyright span {
+      font-family: OpenSans-Regular;
+      font-size: 16px;
+      color: #b7bffc; }
+
 .lightbox .lb-image {
   border-color: #5363db; }
 
