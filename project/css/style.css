@@ -86,8 +86,15 @@ table {
   text-transform: uppercase; }
 
 header {
+  position: fixed;
   height: 100px;
-  background-color: #ffffff; }
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 2px solid #5363db;
+  -webkit-box-shadow: 0px 0px 10px 3px #5363db;
+  -moz-box-shadow: 0px 0px 150px 3px #5363db;
+  box-shadow: 0px 0px 10px 3px #5363db;
+  z-index: 9999; }
   header .container {
     height: 100%;
     display: flex;
@@ -106,137 +113,153 @@ header {
         header .container ul li:hover a {
           color: #5363db; }
         header .container ul li:hover:after {
+          width: 25%; }
+        header .container ul li:hover:before {
+          width: 25%; }
+        header .container ul li:after {
           content: '';
           position: absolute;
-          width: 50%;
+          width: 0;
           height: 1px;
-          left: 25%;
+          left: 50%;
           bottom: -6px;
-          background-color: #5363db; }
+          background-color: #5363db;
+          transition: all 0.3s ease; }
+        header .container ul li:before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          right: 50%;
+          bottom: -6px;
+          background-color: #5363db;
+          transition: all 0.3s ease; }
         header .container ul li a {
           text-decoration: none;
-          color: #555555; }
+          color: #555555;
+          transition: all 0.3s ease; }
         header .container ul li.logo {
           width: 370px;
           display: flex;
           justify-content: center; }
-          header .container ul li.logo:hover:after {
+          header .container ul li.logo:hover:after, header .container ul li.logo:hover:before {
             content: none; }
 
-#reserv .full-container {
-  height: 600px;
-  background: #5363db url("../img/bg-img1.jpg") center bottom no-repeat; }
-  #reserv .full-container .container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%; }
-  #reserv .full-container .content {
-    width: 100%;
-    max-width: 875px;
-    margin-right: 55px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 2; }
-    #reserv .full-container .content form {
-      width: 300px;
-      height: 390px;
-      padding: 25px 35px 35px 30px;
-      box-sizing: border-box;
-      background-color: #ffffff;
-      border-radius: 19px; }
-      #reserv .full-container .content form .title {
-        font-family: OpenSans-SemiBold;
-        font-size: 26px;
-        color: #5363db;
-        margin-bottom: 22px; }
-      #reserv .full-container .content form input,
-      #reserv .full-container .content form select {
-        width: 100%;
-        height: 50px;
-        margin: 10px 0;
-        padding-left: 10px;
-        background-color: #f2f2f2;
-        color: #888888;
-        border: 0;
-        border-radius: 6px;
+#reserv {
+  padding-top: 100px; }
+  #reserv .full-container {
+    height: 600px;
+    background: #5363db url("../img/bg-img1.jpg") center bottom no-repeat; }
+    #reserv .full-container .container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%; }
+    #reserv .full-container .content {
+      width: 100%;
+      max-width: 875px;
+      margin-right: 55px;
+      display: flex;
+      justify-content: space-between; }
+      #reserv .full-container .content form {
+        width: 300px;
+        height: 390px;
+        padding: 25px 35px 35px 30px;
         box-sizing: border-box;
-        outline: none; }
-        #reserv .full-container .content form input::-webkit-input-placeholder,
-        #reserv .full-container .content form select::-webkit-input-placeholder {
-          text-indent: 0px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input::-moz-placeholder,
-        #reserv .full-container .content form select::-moz-placeholder {
-          text-indent: 0px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input:-moz-placeholder,
-        #reserv .full-container .content form select:-moz-placeholder {
-          text-indent: 0px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input:-ms-input-placeholder,
-        #reserv .full-container .content form select:-ms-input-placeholder {
-          text-indent: 0px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input:focus::-webkit-input-placeholder,
-        #reserv .full-container .content form select:focus::-webkit-input-placeholder {
+        background-color: #ffffff;
+        border-radius: 19px; }
+        #reserv .full-container .content form .title {
+          font-family: OpenSans-SemiBold;
+          font-size: 26px;
+          color: #5363db;
+          margin-bottom: 22px; }
+        #reserv .full-container .content form input,
+        #reserv .full-container .content form select {
+          width: 100%;
+          height: 50px;
+          margin: 10px 0;
+          padding-left: 10px;
+          background-color: #f2f2f2;
+          color: #888888;
+          border: 0;
+          border-radius: 6px;
+          box-sizing: border-box;
+          outline: none; }
+          #reserv .full-container .content form input::-webkit-input-placeholder,
+          #reserv .full-container .content form select::-webkit-input-placeholder {
+            text-indent: 0px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input::-moz-placeholder,
+          #reserv .full-container .content form select::-moz-placeholder {
+            text-indent: 0px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input:-moz-placeholder,
+          #reserv .full-container .content form select:-moz-placeholder {
+            text-indent: 0px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input:-ms-input-placeholder,
+          #reserv .full-container .content form select:-ms-input-placeholder {
+            text-indent: 0px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input:focus::-webkit-input-placeholder,
+          #reserv .full-container .content form select:focus::-webkit-input-placeholder {
+            font-family: OpenSans-Regular;
+            font-size: 14px;
+            color: #888888;
+            text-indent: 500px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input:focus::-moz-placeholder,
+          #reserv .full-container .content form select:focus::-moz-placeholder {
+            font-family: OpenSans-Regular;
+            font-size: 14px;
+            color: #888888;
+            text-indent: 500px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input:focus:-moz-placeholder,
+          #reserv .full-container .content form select:focus:-moz-placeholder {
+            font-family: OpenSans-Regular;
+            font-size: 14px;
+            color: #888888;
+            text-indent: 500px;
+            transition: text-indent 0.3s ease; }
+          #reserv .full-container .content form input:focus:-ms-input-placeholder,
+          #reserv .full-container .content form select:focus:-ms-input-placeholder {
+            font-family: OpenSans-Regular;
+            font-size: 14px;
+            color: #888888;
+            text-indent: 500px;
+            transition: text-indent 0.3s ease; }
+        #reserv .full-container .content form option {
           font-family: OpenSans-Regular;
           font-size: 14px;
-          color: #888888;
-          text-indent: 500px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input:focus::-moz-placeholder,
-        #reserv .full-container .content form select:focus::-moz-placeholder {
-          font-family: OpenSans-Regular;
-          font-size: 14px;
-          color: #888888;
-          text-indent: 500px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input:focus:-moz-placeholder,
-        #reserv .full-container .content form select:focus:-moz-placeholder {
-          font-family: OpenSans-Regular;
-          font-size: 14px;
-          color: #888888;
-          text-indent: 500px;
-          transition: text-indent 0.3s ease; }
-        #reserv .full-container .content form input:focus:-ms-input-placeholder,
-        #reserv .full-container .content form select:focus:-ms-input-placeholder {
-          font-family: OpenSans-Regular;
-          font-size: 14px;
-          color: #888888;
-          text-indent: 500px;
-          transition: text-indent 0.3s ease; }
-      #reserv .full-container .content form option {
-        font-family: OpenSans-Regular;
-        font-size: 14px;
-        color: #888888; }
-      #reserv .full-container .content form button {
-        font-family: OpenSans-Bold;
-        font-size: 16px;
-        color: #ffffff;
-        width: 170px;
-        height: 50px;
-        margin-top: 22px;
-        border: 0;
-        box-shadow: none;
-        border-radius: 7px;
-        background-color: #5b6ceb;
-        float: right; }
-        #reserv .full-container .content form button:hover {
-          background-color: #475bf1; }
-    #reserv .full-container .content .info {
-      width: 490px; }
-      #reserv .full-container .content .info .info-title {
-        font-family: OpenSans-Bold;
-        font-size: 48px;
-        line-height: 1.5;
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-bottom: 50px; }
-      #reserv .full-container .content .info .info-description {
-        font-family: FreestyleScript;
-        font-size: 40px;
-        color: #ffffff; }
+          color: #888888; }
+        #reserv .full-container .content form button {
+          font-family: OpenSans-Bold;
+          font-size: 16px;
+          color: #ffffff;
+          width: 170px;
+          height: 50px;
+          margin-top: 22px;
+          border: 0;
+          box-shadow: none;
+          border-radius: 7px;
+          background-color: #5b6ceb;
+          float: right; }
+          #reserv .full-container .content form button:hover {
+            background-color: #475bf1; }
+      #reserv .full-container .content .info {
+        width: 490px; }
+        #reserv .full-container .content .info .info-title {
+          font-family: OpenSans-Bold;
+          font-size: 48px;
+          line-height: 1.5;
+          color: #ffffff;
+          text-transform: uppercase;
+          margin-bottom: 50px; }
+        #reserv .full-container .content .info .info-description {
+          font-family: FreestyleScript;
+          font-size: 40px;
+          color: #ffffff; }
 
 .program .container {
   padding: 125px 0 100px; }
@@ -368,8 +391,8 @@ header {
           content: ''; }
 
 #elements .full-container {
-  height: 550px;
   background: #5363db url("../img/bg-img2.jpg") center bottom no-repeat;
+  background-size: cover;
   padding: 125px 0 75px; }
   #elements .full-container .container {
     display: flex;
@@ -403,6 +426,70 @@ header {
         font-size: 16px;
         line-height: 1.5;
         color: #ffffff; }
+
+#shop .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 0; }
+  #shop .container .offer {
+    width: 370px;
+    border: 1px solid #5363db;
+    border-radius: 8px;
+    overflow: hidden; }
+    #shop .container .offer .offer-header {
+      display: flex;
+      justify-content: center;
+      vertical-align: center;
+      padding: 50px 0;
+      background: #5363db; }
+      #shop .container .offer .offer-header .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        font-family: OpenSans-Bold;
+        color: #ffffff; }
+        #shop .container .offer .offer-header .price .currency {
+          font-size: 32px; }
+        #shop .container .offer .offer-header .price .price-value {
+          font-size: 67px;
+          margin-left: 24px; }
+        #shop .container .offer .offer-header .price .month {
+          font-size: 18px;
+          margin-top: 37px; }
+    #shop .container .offer .offer-body {
+      padding: 50px 0 60px;
+      font-family: OpenSans-Regular;
+      font-size: 18px;
+      color: #555555;
+      text-transform: uppercase; }
+      #shop .container .offer .offer-body span {
+        display: block;
+        position: relative;
+        margin: 0 0 50px 70px; }
+        #shop .container .offer .offer-body span:after {
+          content: '';
+          position: absolute;
+          left: 65px;
+          bottom: -25px;
+          height: 1px;
+          width: 99px;
+          background: #d7d7d7; }
+        #shop .container .offer .offer-body span:last-of-type:after {
+          content: none;
+          background: red; }
+      #shop .container .offer .offer-body button {
+        display: block;
+        width: 170px;
+        height: 50px;
+        padding: 0;
+        margin: 0 auto;
+        font-family: OpenSans-SemiBold;
+        font-size: 18px;
+        color: #ffffff;
+        background: #5363db;
+        border: 1px solid #5363db;
+        border-radius: 17px; }
 
 .lightbox .lb-image {
   border-color: #5363db; }
