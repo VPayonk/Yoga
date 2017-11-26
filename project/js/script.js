@@ -14,9 +14,23 @@
         $('body,html').animate({scrollTop: top}, 1500);
     });
 
+
+    // INIT LIGHTBOX
+
     lightbox.option({
       'albumLabel': '',
       'resizeDuration': 200,
       'wrapAround': true
     })
+
+    // INIT SLICK
+
+    $('.about-slider').slick({
+        dots: false,
+        autoplay: true,
+        infinite: true,
+        speed: 500,
+        cssEase: 'linear'
+      });
+
 });
