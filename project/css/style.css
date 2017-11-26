@@ -95,21 +95,147 @@ header {
         display: inline;
         position: relative;
         font-family: OpenSans-SemiBold;
-        font-size: 14px;
-        color: #555555; }
-        header .container ul li:hover {
+        font-size: 14px; }
+        header .container ul li:hover a {
           color: #5363db; }
-          header .container ul li:hover:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 1px;
-            left: 25%;
-            bottom: -6px;
-            background-color: #5363db; }
+        header .container ul li:hover:after {
+          content: '';
+          position: absolute;
+          width: 50%;
+          height: 1px;
+          left: 25%;
+          bottom: -6px;
+          background-color: #5363db; }
+        header .container ul li a {
+          text-decoration: none;
+          color: #555555; }
         header .container ul li.logo {
           width: 370px;
           display: flex;
           justify-content: center; }
           header .container ul li.logo:hover:after {
             content: none; }
+
+#about .full-container {
+  position: relative;
+  height: 600px;
+  background: #5363db url("../img/bg-img1.png") center bottom no-repeat; }
+  #about .full-container:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(83, 99, 219, 0.8); }
+  #about .full-container .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%; }
+  #about .full-container .content {
+    width: 100%;
+    max-width: 875px;
+    margin-right: 55px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2; }
+    #about .full-container .content form {
+      width: 300px;
+      height: 390px;
+      padding: 25px 35px 35px 30px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      border-radius: 19px; }
+      #about .full-container .content form .title {
+        font-family: OpenSans-SemiBold;
+        font-size: 26px;
+        color: #5363db;
+        margin-bottom: 22px; }
+      #about .full-container .content form input,
+      #about .full-container .content form select {
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+        padding-left: 10px;
+        background-color: #f2f2f2;
+        color: #888888;
+        border: 0;
+        border-radius: 6px;
+        box-sizing: border-box;
+        outline: none; }
+        #about .full-container .content form input::-webkit-input-placeholder,
+        #about .full-container .content form select::-webkit-input-placeholder {
+          text-indent: 0px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input::-moz-placeholder,
+        #about .full-container .content form select::-moz-placeholder {
+          text-indent: 0px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input:-moz-placeholder,
+        #about .full-container .content form select:-moz-placeholder {
+          text-indent: 0px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input:-ms-input-placeholder,
+        #about .full-container .content form select:-ms-input-placeholder {
+          text-indent: 0px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input:focus::-webkit-input-placeholder,
+        #about .full-container .content form select:focus::-webkit-input-placeholder {
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          color: #888888;
+          text-indent: 500px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input:focus::-moz-placeholder,
+        #about .full-container .content form select:focus::-moz-placeholder {
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          color: #888888;
+          text-indent: 500px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input:focus:-moz-placeholder,
+        #about .full-container .content form select:focus:-moz-placeholder {
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          color: #888888;
+          text-indent: 500px;
+          transition: text-indent 0.3s ease; }
+        #about .full-container .content form input:focus:-ms-input-placeholder,
+        #about .full-container .content form select:focus:-ms-input-placeholder {
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          color: #888888;
+          text-indent: 500px;
+          transition: text-indent 0.3s ease; }
+      #about .full-container .content form option {
+        font-family: OpenSans-Regular;
+        font-size: 14px;
+        color: #888888; }
+      #about .full-container .content form button {
+        font-family: OpenSans-Bold;
+        font-size: 16px;
+        color: #ffffff;
+        width: 170px;
+        height: 50px;
+        margin-top: 22px;
+        border: 0;
+        box-shadow: none;
+        border-radius: 7px;
+        background-color: #5b6ceb;
+        float: right; }
+        #about .full-container .content form button:hover {
+          background-color: #475bf1; }
+    #about .full-container .content .info {
+      width: 490px; }
+      #about .full-container .content .info .info-title {
+        font-family: OpenSans-Bold;
+        font-size: 48px;
+        line-height: 1.5;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 50px; }
+      #about .full-container .content .info .info-description {
+        font-family: FreestyleScript;
+        font-size: 40px;
+        color: #ffffff; }

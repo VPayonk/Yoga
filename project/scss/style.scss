@@ -9,7 +9,7 @@ $free: FreestyleScript;
 
 $white: #ffffff;
 $black: #555555;
-$hover: #5363db;
+$blue: #5363db;
 
 .container {
 	width: 100%;
@@ -44,10 +44,11 @@ header {
 				position: relative;
 				font-family: $sbold;
 				font-size: 14px;
-				color: $black;
 
 				&:hover {
-					color: $hover;
+					a {
+						color: $blue;
+					}
 
 					&:after {
 						content: '';
@@ -56,8 +57,13 @@ header {
 						height: 1px;
 						left: 25%;
 						bottom: -6px;
-						background-color: $hover;
+						background-color: $blue;
 					}
+				}
+
+				a {
+					text-decoration: none;
+					color: $black;					
 				}
 
 				&.logo {
@@ -70,6 +76,168 @@ header {
 							content: none;
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+#about {
+	.full-container {
+		position: relative;
+		height: 600px;
+		background: $blue url('../img/bg-img1.png') center bottom no-repeat;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(83, 99, 219, 0.8);
+		}
+
+		.container {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: 100%;
+		}
+
+		.content {
+			width: 100%;
+			max-width: 875px;
+			margin-right: 55px;
+			display: flex;
+			justify-content: space-between;
+			z-index: 2;
+
+			form {
+				width: 300px;
+				height: 390px;
+				padding: 25px 35px 35px 30px;
+				box-sizing: border-box;
+				background-color: $white;
+				border-radius: 19px;
+
+				.title {
+					font-family: $sbold;
+					font-size: 26px;
+					color: $blue;
+					margin-bottom: 22px;
+
+				}
+
+				input,
+				select {
+					width: 100%;
+					height: 50px;
+					margin: 10px 0;
+					padding-left: 10px;
+					background-color: #f2f2f2;
+					color: #888888;
+					border: 0;
+					border-radius: 6px;
+					box-sizing: border-box;
+					outline: none;
+
+					&::-webkit-input-placeholder {
+						text-indent: 0px;
+						transition: text-indent 0.3s ease;
+					}
+
+					&::-moz-placeholder{
+						text-indent: 0px;
+						transition: text-indent 0.3s ease;
+					}
+
+					&:-moz-placeholder{
+						text-indent: 0px;
+						transition: text-indent 0.3s ease;
+					}
+
+					&:-ms-input-placeholder {
+						text-indent: 0px;
+						transition: text-indent 0.3s ease;
+					}
+
+					&:focus {
+						&::-webkit-input-placeholder {
+							font-family: $regular;
+							font-size: 14px;
+							color: #888888;
+							text-indent: 500px;
+							transition: text-indent 0.3s ease;
+						}
+
+						&::-moz-placeholder{
+							font-family: $regular;
+							font-size: 14px;
+							color: #888888;
+							text-indent: 500px;
+							transition: text-indent 0.3s ease;
+						}
+
+						&:-moz-placeholder{
+							font-family: $regular;
+							font-size: 14px;
+							color: #888888;
+							text-indent: 500px;
+							transition: text-indent 0.3s ease;
+						}
+
+						&:-ms-input-placeholder {
+							font-family: $regular;
+							font-size: 14px;
+							color: #888888;
+							text-indent: 500px;
+							transition: text-indent 0.3s ease;
+						}
+					}
+				}
+
+				option {
+					font-family: $regular;
+					font-size: 14px;
+					color: #888888;
+				}
+
+				button {
+					font-family: $bold;
+					font-size: 16px;
+					color: $white;
+					width: 170px;
+					height: 50px;
+					margin-top: 22px; 
+					border: 0;
+					box-shadow: none;
+					border-radius: 7px;
+					background-color: #5b6ceb;
+					float: right;
+
+					&:hover {
+						background-color: #475bf1;
+					}
+				}
+			}			
+
+			.info {
+				width: 490px;
+
+				.info-title {
+					font-family: $bold;
+					font-size: 48px;
+					line-height: 1.5;
+					color: $white;
+					text-transform: uppercase;
+					margin-bottom: 50px;
+				}
+
+				.info-description {
+					font-family: $free;
+					font-size: 40px;
+					color: $white;
 				}
 			}
 		}
