@@ -93,6 +93,9 @@ table {
   color: #5b6ceb;
   text-transform: uppercase; }
 
+button {
+  cursor: pointer; }
+
 *:focus {
   outline: none; }
 
@@ -192,7 +195,7 @@ header {
           padding-left: 10px;
           background-color: #f2f2f2;
           color: #888888;
-          border: 0;
+          border: 1px solid #f2f2f2;
           border-radius: 6px;
           box-sizing: border-box;
           outline: none; }
@@ -258,6 +261,11 @@ header {
           float: right; }
           #reserv .full-container .content form button:hover {
             background-color: #475bf1; }
+          #reserv .full-container .content form button.disabled {
+            opacity: 0.5;
+            cursor: default; }
+            #reserv .full-container .content form button.disabled:hover {
+              background-color: #5b6ceb; }
       #reserv .full-container .content .info {
         width: 490px; }
         #reserv .full-container .content .info .info-title {

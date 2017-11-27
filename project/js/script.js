@@ -12,6 +12,64 @@
     });
 
 
+    // VALIDATION
+
+    $('form').each(function(){
+        
+        var form = $(this),
+            btn = form.find('button');
+        form.find('.valid').addClass('empty_field');
+
+        function checkInput(){
+            form.find('.valid').each(function(){
+                if($(this).val() != ''){
+                    $(this).removeClass('empty_field');
+                } else {
+                    $(this).addClass('empty_field');
+                }
+            });
+            form.find('select').each(function(){
+                if($(this).val() != null){
+                    $(this).removeClass('empty_field');
+                } else {
+                    $(this).addClass('empty_field');
+                }
+            });
+        }
+
+        function lightEmpty(){
+            form.find('.empty_field').css({'border-color':'#d8512d'});
+            setTimeout(function(){
+                form.find('.empty_field').removeAttr('style');
+            },1000);
+        }
+
+        setInterval(function(){
+            checkInput();
+            var sizeEmpty = form.find('.empty_field').length;
+            
+            if(sizeEmpty > 0){
+                if(btn.hasClass('disabled')){
+                    return false
+                } else {
+                    btn.addClass('disabled')
+                }
+            } else {
+                btn.removeClass('disabled')
+            }
+        },1000);
+
+        btn.click(function(){
+            if($(this).hasClass('disabled')){
+                lightEmpty();
+                return false
+            } else {
+                // form.submit();
+            }
+        });
+    });
+
+
     // INIT LIGHTBOX
 
     lightbox.option({
@@ -40,7 +98,7 @@
         },
         function(){
             $this = $(this);
-            $this.parent().prev().css('background', '');
+            $this.parent().prev().removeAttr('style');
         }
     )  
 

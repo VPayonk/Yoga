@@ -33,6 +33,10 @@ $grey: #777777;
 	text-transform: uppercase;
 }
 
+button {
+	cursor: pointer;
+}
+
 * {
 	&:focus {
 		outline: none;
@@ -171,7 +175,7 @@ header {
 					padding-left: 10px;
 					background-color: #f2f2f2;
 					color: #888888;
-					border: 0;
+					border: 1px solid #f2f2f2;
 					border-radius: 6px;
 					box-sizing: border-box;
 					outline: none;
@@ -252,6 +256,15 @@ header {
 
 					&:hover {
 						background-color: #475bf1;
+					}
+
+					&.disabled {
+						opacity: 0.5;
+						cursor: default;
+
+						&:hover {
+							background-color: #5b6ceb;
+						}
 					}
 				}
 			}			
