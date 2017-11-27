@@ -522,7 +522,7 @@ header {
 	.container {
 		display: flex;
 		justify-content: space-between;
-		padding: 100px 0;
+		padding: 100px 0 0;
 
 		.offer {
 			width: 370px;
@@ -605,6 +605,11 @@ header {
 					background: $blue;
 					border: 1px solid $blue;
 					border-radius: 17px;
+
+					&:hover {
+						background: #475bf1;
+						border-color: #475bf1;
+					}
 				}
 			}
 		}
@@ -614,6 +619,7 @@ header {
 #blog {
 	.container {
 		position: relative;
+		padding-top: 100px;
 		margin-bottom: 200px;
 
 		.blog-wraper {

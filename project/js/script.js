@@ -1,17 +1,14 @@
 	$(document).ready(function(){
 
-    $("#menu").on("click","a", function (event) {
-        //отменяем стандартную обработку нажатия по ссылке
+    $('header').on("click","a", function (event) {
         event.preventDefault();
- 
-        //забираем идентификатор бока с атрибута href
+        
         var id  = $(this).attr('href'),
- 
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
-            top = $(id).offset().top;
-         
-        //анимируем переход на расстояние - top за 1500 мс
-        $('body,html').animate({scrollTop: top}, 1500);
+        top = $(id).offset().top - 100;
+        
+        $('body,html').animate({
+            scrollTop: top,
+            }, 1000);
     });
 
 
@@ -32,6 +29,20 @@
         speed: 500,
         cssEase: 'linear'
     });
+
+    
+    // OFFER HOVER 
+
+    $('.offer button').hover(
+        function(){
+            $this = $(this);
+            $this.parent().prev().css('background', '#475bf1');
+        },
+        function(){
+            $this = $(this);
+            $this.parent().prev().css('background', '');
+        }
+    )  
 
 
     // BLOG

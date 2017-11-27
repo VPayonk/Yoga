@@ -443,7 +443,7 @@ header {
 #shop .container {
   display: flex;
   justify-content: space-between;
-  padding: 100px 0; }
+  padding: 100px 0 0; }
   #shop .container .offer {
     width: 370px;
     background: #ffffff;
@@ -505,9 +505,13 @@ header {
         background: #5363db;
         border: 1px solid #5363db;
         border-radius: 17px; }
+        #shop .container .offer .offer-body button:hover {
+          background: #475bf1;
+          border-color: #475bf1; }
 
 #blog .container {
   position: relative;
+  padding-top: 100px;
   margin-bottom: 200px; }
   #blog .container .blog-wraper {
     position: static;
