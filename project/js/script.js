@@ -31,6 +31,38 @@
         infinite: true,
         speed: 500,
         cssEase: 'linear'
-      });
+    });
+
+
+    // BLOG
+
+    $('.blog-tabs').slick({
+        dots: false,
+        speed: 500,
+    });
+
+     $('.blog-block').slick({
+        arrows: false,
+        dots: true,
+        vertical: true,
+        speed: 500,
+    });
+
+    var btn_state = true;
+    var $blogBlock = $('.blog-block');
+    var $blogTab = $('.blog-tab')
+       
+    $blogTab.click(function(){
+        if(btn_state){
+            btn_state = !btn_state;
+            
+            var i = $blogTab.index(this);
+            $blogBlock.removeClass('show').eq(i-1).addClass('show');
+         
+            setTimeout(function(){
+            btn_state = !btn_state;
+            },500);
+        }
+    });
 
 });

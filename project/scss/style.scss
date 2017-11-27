@@ -5,6 +5,7 @@
 $sbold: OpenSans-SemiBold;
 $bold: OpenSans-Bold;
 $regular: OpenSans-Regular;
+$italic: OpenSans-Italic;
 $free: FreestyleScript;
 
 $white: #ffffff;
@@ -32,16 +33,22 @@ $grey: #777777;
 	text-transform: uppercase;
 }
 
+* {
+	&:focus {
+		outline: none;
+	}
+}
+
 header {
 	position: fixed;
 	height: 100px;
 	width: 100%;
 	background-color: $white;
 	border-bottom: 2px solid $blue;
-	-webkit-box-shadow:0px 0px 10px 3px $blue ;
-	-moz-box-shadow:0px 0px 150px 3px $blue ;
-	box-shadow:0px 0px 10px 3px $blue ;
-	z-index: 9999;
+	-webkit-box-shadow: 0 0 10px 3px $blue ;
+	-moz-box-shadow: 0 0 10px 3px $blue ;
+	box-shadow: 0 0 10px 3px $blue ;
+	z-index: 999999;
 	
 	.container {
 		height: 100%;
@@ -72,9 +79,7 @@ header {
 
 					&:before {
 						width: 25%;
-					}
-
-					
+					}					
 				}
 
 				&:after {
@@ -156,7 +161,6 @@ header {
 					font-size: 26px;
 					color: $blue;
 					margin-bottom: 22px;
-
 				}
 
 				input,
@@ -302,8 +306,10 @@ header {
 				width: 570px;
 				height: 300px;
 				margin-bottom: 25px;
-				border: 2px solid $blue;
 				border-radius: 7px;
+				-webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
+				-moz-box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
+				box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
 
 				.left-column {
 					width: 270px;
@@ -520,9 +526,11 @@ header {
 
 		.offer {
 			width: 370px;
-			border: 1px solid $blue;
+			background: $white;
 			border-radius: 8px;
-			overflow: hidden;
+			-webkit-box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
+			-moz-box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
+			box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
 
 			.offer-header {
 				display: flex;
@@ -603,9 +611,251 @@ header {
 	}
 }
 
+#blog {
+	.container {
+		position: relative;
+		margin-bottom: 200px;
+
+		.blog-wraper {
+			position: static;
+			height: 250px;
+			border-radius: 7px;
+			overflow: hidden;
+			-webkit-box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
+			-moz-box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
+			box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
+		}
+
+		.blog-block {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			margin: 0;
+			opacity: 0;
+
+			.blog-element {
+				display: flex;
+				justify-content: flex-start;
+				background: $white;
+				padding: 35px 75px 65px 60px;
+
+				.image {
+					position: relative;
+					
+					img {
+						width: 125px;
+						height: 125px;
+						padding: 10px;
+						border: 2px solid #d7d7d7;
+						border-radius: 50%;						
+					}
+
+					&:after {
+						content: '';
+						position: absolute;
+						right: -45px;
+						bottom: 10px;
+						width: 2px;
+						height: 75px;
+						background: #d7d7d7;
+					}
+				}
+
+				div {
+					padding-left: 90px;
+
+					blockquote {
+						position: relative;
+						width: 640px;
+						margin: 10px 0 20px;
+						font-family: $italic;
+						font-size: 14px;
+						line-height: 1.5;
+						color: $black;
+
+						&:before {
+							content: '“';
+							position: absolute;
+							font-family: $regular;
+							font-size: 60px;
+							color: $blue;
+							top: -20px;
+							left: -50px;
+						}
+
+						&:after {
+							content: '”';
+							position: absolute;
+							font-family: $regular;
+							font-size: 60px;
+							color: $blue;
+							bottom: -65px;
+							right: -80px;
+						}
+					}
+
+					span {
+						display: block;
+						font-family: $regular;
+						font-size: 14px;
+						color: $grey;
+						margin-bottom: 10px;
+					}
+
+					.name {
+						font-family: $bold;
+						font-size: 16px;
+						color: #5b6ceb;
+					}
+				}
+			}
+
+			&.hide {
+			    transition: bottom 0s 0.3s;
+			    opacity: 0;
+			}
+
+			&.show {
+			    transition: bottom 0.3s;
+			    opacity: 1;
+			}
+
+			.slick-dots {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				right: -70px;
+			    bottom: 0;
+			    height: 100%;
+			    width: 33px;
+				z-index: 100;
+
+				li {
+					margin-bottom: 18px;
+					border: 2px solid #d7d7d7;
+					border-radius: 50%;
+
+					&.slick-active {
+						border: 2px solid $blue;
+
+						button {
+							&:before {
+								background: $blue;
+								opacity: 1;
+							}
+						}
+					}
+
+					button {
+						font-size: 71px;
+
+						&:before {
+							content: '';
+						    left: 5px;
+						    top: 5px;
+						    width: 10px;
+						    height: 10px;
+						    background: #d7d7d7;
+						    border-radius: 50%;
+						    opacity: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.blog-tabs {
+			position: absolute;
+			display: inline-block;
+			width: 160px;
+			left: 360px;
+			bottom: -36px;
+			z-index: 100;
+
+			.blog-tab {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				cursor: pointer;
+
+				img {
+					width: 70px;
+					height: 70px;
+					border: 1px solid #d7d7d7;
+					border-radius: 50%;
+				}
+
+				div {
+					width: 90px;
+					padding: 20px 0 0 10px;
+
+					.name {
+						font-family: $bold;
+						font-size: 14px;
+						color: $black;
+						margin-bottom: 10px;
+					}
+
+					span {
+						font-family: $regular;
+						font-size: 12px;
+						color: $grey;
+					}
+				}
+
+			}
+
+			.slick-prev {
+				left: -60px;
+				width: 30px;
+				height: 30px;
+				background: $white url('../img/prev.png') center no-repeat;
+				border-radius: 50%;
+				z-index: 2;
+				-webkit-box-shadow: 0 0 9px 9px rgba(0, 0, 0, .1);
+				-moz-box-shadow: 0 0 9px 9px rgba(0, 0, 0, .1);
+				box-shadow: 0 0 9px 9px rgba(0, 0, 0, .1);
+
+				&:before {
+					content: '';
+				}
+			}
+
+			.slick-next {
+				right: -60px;
+				width: 30px;
+				height: 30px;
+				background: $white url('../img/next.png') center no-repeat;
+				border-radius: 50%;
+				z-index: 2;
+				-webkit-box-shadow: 0 0 9px 9px rgba(0, 0, 0, .1);
+				-moz-box-shadow: 0 0 9px 9px rgba(0, 0, 0, .1);
+				box-shadow: 0 0 9px 9px rgba(0, 0, 0, .1);
+
+				&:before {
+					content: '';
+				}
+			}
+		}
+
+	}
+}
 
 footer {
+	position: relative;
 	background: #5b6ceb;
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		right: 0;
+		height: 615px;
+		width: 925px;
+		background: url('../img/lotos.png');
+		background-size: cover;
+		z-index: -1;
+	}
 
 	.container {
 		display: flex;

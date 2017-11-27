@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'OpenSans-SemiBold';
   src: url("../fonts/OpenSans-SemiBold.eot");
@@ -16,6 +17,13 @@
   font-family: 'OpenSans-Regular';
   src: url("../fonts/OpenSans-Regular.eot");
   src: url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype"), url("../fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: url("../fonts/OpenSans-Italic.eot");
+  src: url("../fonts/OpenSans-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Italic.woff") format("woff"), url("../fonts/OpenSans-Italic.ttf") format("truetype"), url("../fonts/OpenSans-Italic.svg#OpenSans-Italic") format("svg");
   font-style: normal;
   font-weight: normal; }
 
@@ -85,16 +93,19 @@ table {
   color: #5b6ceb;
   text-transform: uppercase; }
 
+*:focus {
+  outline: none; }
+
 header {
   position: fixed;
   height: 100px;
   width: 100%;
   background-color: #ffffff;
   border-bottom: 2px solid #5363db;
-  -webkit-box-shadow: 0px 0px 10px 3px #5363db;
-  -moz-box-shadow: 0px 0px 150px 3px #5363db;
-  box-shadow: 0px 0px 10px 3px #5363db;
-  z-index: 9999; }
+  -webkit-box-shadow: 0 0 10px 3px #5363db;
+  -moz-box-shadow: 0 0 10px 3px #5363db;
+  box-shadow: 0 0 10px 3px #5363db;
+  z-index: 999999; }
   header .container {
     height: 100%;
     display: flex;
@@ -283,8 +294,10 @@ header {
       width: 570px;
       height: 300px;
       margin-bottom: 25px;
-      border: 2px solid #5363db;
-      border-radius: 7px; }
+      border-radius: 7px;
+      -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1); }
       .program .container .our-classes .class-block .left-column {
         width: 270px; }
         .program .container .our-classes .class-block .left-column img {
@@ -433,9 +446,11 @@ header {
   padding: 100px 0; }
   #shop .container .offer {
     width: 370px;
-    border: 1px solid #5363db;
+    background: #ffffff;
     border-radius: 8px;
-    overflow: hidden; }
+    -webkit-box-shadow: 0 0 50px 9px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 50px 9px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 50px 9px rgba(0, 0, 0, 0.1); }
     #shop .container .offer .offer-header {
       display: flex;
       justify-content: center;
@@ -491,8 +506,182 @@ header {
         border: 1px solid #5363db;
         border-radius: 17px; }
 
+#blog .container {
+  position: relative;
+  margin-bottom: 200px; }
+  #blog .container .blog-wraper {
+    position: static;
+    height: 250px;
+    border-radius: 7px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 50px 9px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 50px 9px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 50px 9px rgba(0, 0, 0, 0.1); }
+  #blog .container .blog-block {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    opacity: 0; }
+    #blog .container .blog-block .blog-element {
+      display: flex;
+      justify-content: flex-start;
+      background: #ffffff;
+      padding: 35px 75px 65px 60px; }
+      #blog .container .blog-block .blog-element .image {
+        position: relative; }
+        #blog .container .blog-block .blog-element .image img {
+          width: 125px;
+          height: 125px;
+          padding: 10px;
+          border: 2px solid #d7d7d7;
+          border-radius: 50%; }
+        #blog .container .blog-block .blog-element .image:after {
+          content: '';
+          position: absolute;
+          right: -45px;
+          bottom: 10px;
+          width: 2px;
+          height: 75px;
+          background: #d7d7d7; }
+      #blog .container .blog-block .blog-element div {
+        padding-left: 90px; }
+        #blog .container .blog-block .blog-element div blockquote {
+          position: relative;
+          width: 640px;
+          margin: 10px 0 20px;
+          font-family: OpenSans-Italic;
+          font-size: 14px;
+          line-height: 1.5;
+          color: #555555; }
+          #blog .container .blog-block .blog-element div blockquote:before {
+            content: '“';
+            position: absolute;
+            font-family: OpenSans-Regular;
+            font-size: 60px;
+            color: #5363db;
+            top: -20px;
+            left: -50px; }
+          #blog .container .blog-block .blog-element div blockquote:after {
+            content: '”';
+            position: absolute;
+            font-family: OpenSans-Regular;
+            font-size: 60px;
+            color: #5363db;
+            bottom: -65px;
+            right: -80px; }
+        #blog .container .blog-block .blog-element div span {
+          display: block;
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          color: #777777;
+          margin-bottom: 10px; }
+        #blog .container .blog-block .blog-element div .name {
+          font-family: OpenSans-Bold;
+          font-size: 16px;
+          color: #5b6ceb; }
+    #blog .container .blog-block.hide {
+      transition: bottom 0s 0.3s;
+      opacity: 0; }
+    #blog .container .blog-block.show {
+      transition: bottom 0.3s;
+      opacity: 1; }
+    #blog .container .blog-block .slick-dots {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      right: -70px;
+      bottom: 0;
+      height: 100%;
+      width: 33px;
+      z-index: 100; }
+      #blog .container .blog-block .slick-dots li {
+        margin-bottom: 18px;
+        border: 2px solid #d7d7d7;
+        border-radius: 50%; }
+        #blog .container .blog-block .slick-dots li.slick-active {
+          border: 2px solid #5363db; }
+          #blog .container .blog-block .slick-dots li.slick-active button:before {
+            background: #5363db;
+            opacity: 1; }
+        #blog .container .blog-block .slick-dots li button {
+          font-size: 71px; }
+          #blog .container .blog-block .slick-dots li button:before {
+            content: '';
+            left: 5px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #d7d7d7;
+            border-radius: 50%;
+            opacity: 0; }
+  #blog .container .blog-tabs {
+    position: absolute;
+    display: inline-block;
+    width: 160px;
+    left: 360px;
+    bottom: -36px;
+    z-index: 100; }
+    #blog .container .blog-tabs .blog-tab {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      cursor: pointer; }
+      #blog .container .blog-tabs .blog-tab img {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #d7d7d7;
+        border-radius: 50%; }
+      #blog .container .blog-tabs .blog-tab div {
+        width: 90px;
+        padding: 20px 0 0 10px; }
+        #blog .container .blog-tabs .blog-tab div .name {
+          font-family: OpenSans-Bold;
+          font-size: 14px;
+          color: #555555;
+          margin-bottom: 10px; }
+        #blog .container .blog-tabs .blog-tab div span {
+          font-family: OpenSans-Regular;
+          font-size: 12px;
+          color: #777777; }
+    #blog .container .blog-tabs .slick-prev {
+      left: -60px;
+      width: 30px;
+      height: 30px;
+      background: #ffffff url("../img/prev.png") center no-repeat;
+      border-radius: 50%;
+      z-index: 2;
+      -webkit-box-shadow: 0 0 9px 9px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 0 9px 9px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 9px 9px rgba(0, 0, 0, 0.1); }
+      #blog .container .blog-tabs .slick-prev:before {
+        content: ''; }
+    #blog .container .blog-tabs .slick-next {
+      right: -60px;
+      width: 30px;
+      height: 30px;
+      background: #ffffff url("../img/next.png") center no-repeat;
+      border-radius: 50%;
+      z-index: 2;
+      -webkit-box-shadow: 0 0 9px 9px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 0 9px 9px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 9px 9px rgba(0, 0, 0, 0.1); }
+      #blog .container .blog-tabs .slick-next:before {
+        content: ''; }
+
 footer {
+  position: relative;
   background: #5b6ceb; }
+  footer:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    height: 615px;
+    width: 925px;
+    background: url("../img/lotos.png");
+    background-size: cover;
+    z-index: -1; }
   footer .container {
     display: flex;
     padding: 100px 0;
