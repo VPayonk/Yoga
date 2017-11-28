@@ -1,5 +1,16 @@
 	$(document).ready(function(){
 
+
+    // HAMBURGER
+
+    $('.hamburger').on('click', function() {
+       $(this).toggleClass('active');
+       $('header ul').toggleClass('open');
+       $('body').toggleClass('block');
+    });
+   
+    // SCROL
+
     $('header').on("click","a", function (event) {
         event.preventDefault();
         
@@ -38,7 +49,7 @@
         }
 
         function lightEmpty(){
-            form.find('.empty_field').css({'border-color':'#d8512d'});
+            form.find('.empty_field').css({'border-color':'#555555'});
             setTimeout(function(){
                 form.find('.empty_field').removeAttr('style');
             },1000);
@@ -74,6 +85,7 @@
 
     lightbox.option({
       'albumLabel': '',
+      'positionFromTop': 150,
       'resizeDuration': 200,
       'wrapAround': true
     })

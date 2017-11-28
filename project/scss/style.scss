@@ -43,6 +43,10 @@ button {
 	}
 }
 
+.block {
+    overflow: hidden !important;
+}
+
 header {
 	position: fixed;
 	height: 100px;
@@ -55,9 +59,14 @@ header {
 	z-index: 999999;
 	
 	.container {
+		position: relative;
 		height: 100%;
 		display: flex;
 		justify-content: center;
+
+		.mobile-logo {
+			display: none;
+		}
 		
 		ul {
 			width: 100%;
@@ -128,6 +137,10 @@ header {
 				}
 			}
 		}
+
+		.hamburger {
+			display: none;
+		}
 	}
 }
 
@@ -137,6 +150,7 @@ header {
 	.full-container {
 		height: 600px;
 		background: $blue url('../img/bg-img1.jpg') center bottom no-repeat;
+		background-size: cover;
 
 		.container {
 			display: flex;
@@ -270,7 +284,8 @@ header {
 			}			
 
 			.info {
-				width: 490px;
+				width: 100%;
+				max-width: 490px;
 
 				.info-title {
 					font-family: $bold;
@@ -317,7 +332,7 @@ header {
 			.class-block {
 				display: flex;
 				width: 570px;
-				height: 300px;
+				min-height: 300px;
 				margin-bottom: 25px;
 				border-radius: 7px;
 				-webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
@@ -330,6 +345,7 @@ header {
 					img {
 						width: 100%;
 						height: 100%;
+						object-fit: cover;
 					}
 				}
 
@@ -367,7 +383,8 @@ header {
 
 .gallery {
 	display: flex;
-	flex-wrap: wrap;	
+	flex-wrap: wrap;
+	justify-content: center;	
 
 	.photo {
 		width: 25%;
@@ -416,10 +433,10 @@ header {
 }
 
 #about {
-	height: 550px;
-
+	
 	.container {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		padding: 125px 0;
 
@@ -534,6 +551,7 @@ header {
 #shop {
 	.container {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		padding: 100px 0 0;
 
@@ -541,6 +559,7 @@ header {
 			width: 370px;
 			background: $white;
 			border-radius: 8px;
+			overflow: hidden;
 			-webkit-box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
 			-moz-box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
 			box-shadow: 0 0 50px 9px rgba(0, 0, 0, .1);
@@ -548,7 +567,6 @@ header {
 			.offer-header {
 				display: flex;
 				justify-content: center;
-				vertical-align: center;
 				padding: 50px 0;
 				background: $blue;
 
@@ -651,15 +669,18 @@ header {
 			bottom: 0;
 			margin: 0;
 			opacity: 0;
+			z-index: -1;
 
 			.blog-element {
 				display: flex;
 				justify-content: flex-start;
 				background: $white;
 				padding: 35px 75px 65px 60px;
+				box-sizing: border-box;
 
 				.image {
 					position: relative;
+					padding: 0;
 					
 					img {
 						width: 125px;
@@ -732,11 +753,13 @@ header {
 			&.hide {
 			    transition: bottom 0s 0.3s;
 			    opacity: 0;
+			    z-index: -1;
 			}
 
 			&.show {
 			    transition: bottom 0.3s;
 			    opacity: 1;
+			    z-index: 1;
 			}
 
 			.slick-dots {
@@ -786,7 +809,7 @@ header {
 		.blog-tabs {
 			position: absolute;
 			display: inline-block;
-			width: 160px;
+			width: 170px;
 			left: 360px;
 			bottom: -36px;
 			z-index: 100;
@@ -805,7 +828,7 @@ header {
 				}
 
 				div {
-					width: 90px;
+					width: 100px;
 					padding: 20px 0 0 10px;
 
 					.name {
